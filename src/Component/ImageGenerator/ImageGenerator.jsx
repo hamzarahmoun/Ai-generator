@@ -3,7 +3,6 @@ import './ImageGenerator.css'
 import default_image from '../Assets/default_image.svg'
 
 const ImageGenerator = () => {
-  const apiimage =""
   const [image_url,setImage_url] = useState("/")
   const [loading,setLoading] = useState(false)
   let inputRef = useRef(null);
@@ -13,13 +12,12 @@ const ImageGenerator = () => {
     }
     setLoading(true)
     const response = await fetch (
-      apiimage,
+      "https://api.openai.com/v1/images/generations",
       {
         method: "POST",
         headers:{
           "Content-Type":"application/json",
-          Authorization:
-          "Bearer {api}", 
+          Authorization: `Bearer ${process.env.REACT_APP_OPENAI_API_KEY}`, // Use environment variable
           "User-Agent":"Chrome"
         },
         body:JSON.stringify({
