@@ -3,6 +3,7 @@ import './ImageGenerator.css'
 import default_image from '../Assets/default_image.svg'
 
 const ImageGenerator = () => {
+  const apiimage ="https://api.openai.com/v1/images/generations"
   const [image_url,setImage_url] = useState("/")
   const [loading,setLoading] = useState(false)
   let inputRef = useRef(null);
@@ -12,7 +13,7 @@ const ImageGenerator = () => {
     }
     setLoading(true)
     const response = await fetch (
-      "https://api.openai.com/v1/images/generations",
+      apiimage,
       {
         method: "POST",
         headers:{
