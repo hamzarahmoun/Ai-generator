@@ -3,7 +3,7 @@ import './ImageGenerator.css'
 import default_image from '../Assets/default_image.svg'
 
 const ImageGenerator = () => {
-  const apiimage ="https://api.openai.com/v1/images/generations"
+  const apiimage =""
   const [image_url,setImage_url] = useState("/")
   const [loading,setLoading] = useState(false)
   let inputRef = useRef(null);
